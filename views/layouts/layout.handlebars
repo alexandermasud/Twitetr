@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
+   
     <meta charset="UTF-8">
     <title>Document</title>
     
@@ -8,12 +9,57 @@
 	<link href="/css/style.css" rel="stylesheet">
 	<link href="/css/font-awesome.css" rel="stylesheet">
 	
-    
-    
 </head>
 <body>
     
 <nav></nav>
+
+
+        {{#if success_msg}}
+		    <div class="alert alert-success alert-dismissible show alert-custom flash-msg" role="alert">
+                <button aria-label="Close" class="close" data-dismiss="alert" type="button"><span aria-hidden="true">&times;</span></button>
+                {{{success_msg}}}
+            </div>
+        {{/if}}
+        
+        {{#if error_msg}}
+		    <div class="alert alert-danger alert-dismissible show alert-custom flash-msg" role="alert">
+                <button aria-label="Close" class="close" data-dismiss="alert" type="button"><span aria-hidden="true">&times;</span></button>
+                {{{error_msg}}}
+            </div>
+        {{/if}} 
+                    
+                    
+         {{#if fail_msg}}
+		    <div class="alert alert-danger alert-dismissible show alert-custom flash-msg" role="alert">
+                <button aria-label="Close" class="close" data-dismiss="alert" type="button"><span aria-hidden="true">&times;</span></button>
+                {{{fail_msg}}}
+            </div>
+        {{/if}} 
+                    
+         {{#if error}}
+		    <div class="alert alert-danger alert-dismissible show alert-custom flash-msg" role="alert">
+                <button aria-label="Close" class="close" data-dismiss="alert" type="button"><span aria-hidden="true">&times;</span></button>
+                {{{error}}}
+            </div>
+        {{/if}} 
+                    
+         {{#if errors}}
+		    <div class="alert alert-danger alert-dismissible show alert-custom flash-msg" role="alert">
+            <button aria-label="Close" class="close" data-dismiss="alert" type="button"><span aria-hidden="true">&times;</span></button>
+                {{{errors}}}
+            </div>
+        {{/if}} 
+                    
+                    
+         {{#if errors}}
+             {{#each error}}
+		    <div class="alert alert-danger alert-dismissible show alert-custom flash-msg" role="alert">
+                <button aria-label="Close" class="close" data-dismiss="alert" type="button"><span aria-hidden="true">&times;</span></button>
+                    {{{error_msg}}}
+            </div>
+            {{/each}}
+        {{/if}} 
 
 
 {{{body}}}
@@ -21,16 +67,13 @@
 
 
 
-    <script src="https://code.jquery.com/jquery-3.2.1.js"   integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js">
-	</script> 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script> 
 	
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js">
-	</script> 
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script> 
 	
-	<script src="/js/script.js">
-	</script>
+	<script src="/js/script.js"></script>
 
 </body>
 </html>
