@@ -3,8 +3,11 @@ var Schema = mongoose.Schema;
 
 // Create Shema
 var UserSchema = new Schema({
-  username:{
+  twitterid:{
     type:String,
+  },
+  twitterhandle: {
+      type:String
   },
    email:{
     type:String,

@@ -1,21 +1,25 @@
 var TwitterStrategy = require('passport-twitter').Strategy;
 var mongoose = require('mongoose');
-
-// Load user model
+var passport = require('passport');
 var User = mongoose.model('users');
+
+module.exports = function(passport){
 
 
     passport.use(new TwitterStrategy({
         
-    consumerKey:'VrVfEuiiRaki1xCBEUvBb8Ryw',
-    consumerSecret:'7JrMmfcETU0aKlYBVYuLP8S5p9iTglXMVnImkgg3MwZoQZDQub',
+    consumerKey:'mwuqq8HHKzDdim86v4tx2DRmI',
+    consumerSecret:'pqt6mmV33wkgDN7R4ktoJ8eki7aPiGMLyoStT26V5PDjUi7Dvt',
     callbackURL:'/auth/twitter/callback',
     includeEmail: true
   },
   function(token, tokenSecret, profile, done) {
         
+        
+        
        var newUser = {
-        username: profile.id,
+        twitterid: profile.id,
+        twitterhandle: profile.username,   
         email: profile.emails[0].value,
         token: token,
         tokenSecret: tokenSecret
@@ -23,7 +27,7 @@ var User = mongoose.model('users');
 
       // Check for existing user
       User.findOne({
-        username: profile.id
+        twitterid: profile.id
       }).then(user => {
         if(user){
           // Return user
@@ -46,8 +50,8 @@ var User = mongoose.model('users');
   passport.deserializeUser((id, done) => {
     User.findById(id).then(user => done(null, user));
   });
-    
-    
-    
+
 }
+
+
 

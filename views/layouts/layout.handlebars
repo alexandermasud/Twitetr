@@ -11,8 +11,43 @@
 	
 </head>
 <body>
-    
-<nav></nav>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			
+			
+			
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="/">Start</a>
+					</li>
+					
+				
+				</ul>
+				<ul class="nav navbar-nav nav-pills pull-right">
+					<li style="list-style: none">{{#if user}}</li>
+
+					<li role="presentation">
+					<div class="btn btn-outline-secondary btn-block">
+					    Inloggad: @{{user.twitterhandle}}
+					</div>
+						
+					</li>
+					<li role="presentation">
+						<a class="btn btn-outline-secondary btn-block" href="auth/logout">Logga ut</a>
+					</li>
+					
+					
+					{{else}}
+					
+					
+					{{/if}}
+				</ul>
+			</div>
+			
+			
+		</nav>
+   
 
 
         {{#if success_msg}}
@@ -44,7 +79,7 @@
             </div>
         {{/if}} 
                     
-         {{#if errors}}
+        {{#if errors}}
 		    <div class="alert alert-danger alert-dismissible show alert-custom flash-msg" role="alert">
             <button aria-label="Close" class="close" data-dismiss="alert" type="button"><span aria-hidden="true">&times;</span></button>
                 {{{errors}}}

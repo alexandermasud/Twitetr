@@ -1,9 +1,7 @@
 var express = require('express');
 var path = require('path');
-var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var exphbs = require('express-handlebars');
-var expressValidator = require('express-validator');
 var flash = require('connect-flash');
 var session = require('express-session');
 var passport = require('passport');
@@ -68,21 +66,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
-app.use(expressValidator({
-	errorFormatter: function(param, msg, value) {
-		var namespace = param.split('.'),
-			root = namespace.shift(),
-			formParam = root;
-		while (namespace.length) {
-			formParam += '[' + namespace.shift() + ']';
-		}
-		return {
-			param: formParam,
-			msg: msg,
-			value: value
-		};
-	}
-}));
 
 
 require('./models/user');
@@ -113,6 +96,9 @@ app.use(function(req, res, next) {
 app.get('/', index);
 
 app.use('/auth', auth);
+
+app.get('/tweet', tweet);
+app.post('/tweet', tweet);
 
 //----------------------------------------------------------------------------------
 
