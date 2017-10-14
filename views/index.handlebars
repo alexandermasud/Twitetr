@@ -1,2 +1,19 @@
 
-<a class="btn btn-info btn-block" href="/auth/twitter"><i class="fa fa-twitter" aria-hidden="true"></i> Logga in med Twitter</a>
+<div class="container">
+
+<div class="row"><h1 class="h1index">LOREM IPSUM</h1></div>
+<div class="row"><h3 class="h3index">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae voluptas, asperiores ducimus in, assumenda, ea sequi eos, quibusdam odit sed minus voluptatibus ipsa tempore similique officiis soluta cum dolorum quas.</h3></div>
+<div class="row">
+<div class="col-md-3"></div>
+<div class="col-md-6">
+
+{{#if user}}
+<a class="btn btn-block twitter-btn" href="/tweet"><i class="fa fa-twitter fa-3x" aria-hidden="true"></i><p>JAG VILL TWEETA!</p></a>
+{{else}}
+<a class="btn btn-block twitter-btn" href="/auth/twitter"><i class="fa fa-twitter fa-3x" aria-hidden="true"></i><p>JAG VILL LOGGA IN!</p></a>
+{{/if}}
+
+</div>
+<div class="col-md-3"></div>
+</div>
+</div>

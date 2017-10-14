@@ -42,10 +42,9 @@ mongo.connect(url, function(err, db) {
 
 });
 
-      console.log('HEJ!!')
   twitterClient.post('statuses/update', {status: (req.body.tweetText)}, function(error, tweet, response) {
   if (!error) {
-    console.log(tweet);
+    console.log('Tweet = ' + (tweet));
       req.flash('success_msg', 'Du tweetade!');
 
         res.redirect('/');

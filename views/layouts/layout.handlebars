@@ -3,14 +3,17 @@
 <head>
    
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>LOREM IPSUM</title>
     
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/css/style.css" rel="stylesheet">
 	<link href="/css/font-awesome.css" rel="stylesheet">
+	<link href="/css/animate.css" rel="stylesheet" >
 	
 </head>
 <body>
+<div id="grad">
+<div class="animated fadeIn">
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 			
@@ -19,19 +22,17 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item active">
-						<a class="nav-link" href="/">Start</a>
+						<a class="nav-link" href="/">LOREM IPSUM</a>
 					</li>
 					
 				
 				</ul>
 				<ul class="nav navbar-nav nav-pills pull-right">
-					<li style="list-style: none">{{#if user}}</li>
+					{{#if user}}
 
 					<li role="presentation">
-					<div class="btn btn-outline-secondary btn-block">
-					    Inloggad: @{{user.twitterhandle}}
-					</div>
-						
+                        <input type="text" class="btn btn-outline-secondary btn-block" value="@{{user.twitterhandle}}" readonly>
+
 					</li>
 					<li role="presentation">
 						<a class="btn btn-outline-secondary btn-block" href="auth/logout">Logga ut</a>
@@ -39,6 +40,10 @@
 					
 					
 					{{else}}
+					
+					<li role="presentation">
+						<a class="btn btn-outline-secondary btn-block" href="auth/twitter">Logga in</a>
+					</li>
 					
 					
 					{{/if}}
@@ -49,7 +54,7 @@
 		</nav>
    
 
-
+        
         {{#if success_msg}}
 		    <div class="alert alert-success alert-dismissible show alert-custom flash-msg" role="alert">
                 <button aria-label="Close" class="close" data-dismiss="alert" type="button"><span aria-hidden="true">&times;</span></button>
@@ -110,5 +115,7 @@
 	
 	<script src="/js/script.js"></script>
 
+</div>
+</div>
 </body>
 </html>
