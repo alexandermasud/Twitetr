@@ -20,26 +20,28 @@ router.get('/tweet', function(req, res) {
 
 
 router.post('/tweet',  function(req, res) {
-    
-   
-    
+
+
+
 mongo.connect(url, function(err, db) {
   if (err) throw err;
-  db.collection("users").findOne({userid: (req.body.userid)}, function(err, result) {
+  db.collection("users").findOne({twitterid: (req.body.twitterid)}, function(err, result) {
     if (err) throw err;
-      
+
     console.log(result);
+
     db.close();
-      
+
       var twitterClient = new Twitter({
-    
-    
-  consumerKey:'mwuqq8HHKzDdim86v4tx2DRmI',
-  consumerSecret:'pqt6mmV33wkgDN7R4ktoJ8eki7aPiGMLyoStT26V5PDjUi7Dvt',
+
+
+  consumer_key:'mwuqq8HHKzDdim86v4tx2DRmI',
+  consumer_secret:'pqt6mmV33wkgDN7R4ktoJ8eki7aPiGMLyoStT26V5PDjUi7Dvt',
   access_token_key: result.token,
   access_token_secret: result.tokenSecret
+
 });
-      
+
       console.log('HEJ!!')
   twitterClient.post('statuses/update', {status: (req.body.tweetText)}, function(error, tweet, response) {
   if (!error) {
@@ -48,20 +50,20 @@ mongo.connect(url, function(err, db) {
 
         res.redirect('/');
   }
-      
+
     else{
-        
+
         req.flash('fail_msg', 'Något gick fel');
         res.redirect('/');
     }
 
   });
 });
-    
+
 
 
 });
-    
+
 });
 
 
