@@ -6,6 +6,7 @@
     
 }
 
+
 .twitter-btncolor{
     background-color: #1da1f2;
     color:white;
@@ -77,8 +78,6 @@ a.twitter-btn:hover{
     
     margin-top: 60px;
     margin-bottom: 60px;
-    
-    
 }
 
 .indexdownarrow{
@@ -100,7 +99,22 @@ a.indexdownarrow:hover{
 footer{
      
   bottom: 0;
- 
-    height: 200px;
-    background-color:#343434; 
+    height: 120px;
+    background-color:#3eb991;
+    color: white;
+    padding-left: 5px;
+}
+
+footer p{
+    display: inline;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#philip, #malmo{
+    margin-left: 2px;
+}
+
+#tweetText{
+    margin-top: 20px;
 }
