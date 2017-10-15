@@ -2,7 +2,7 @@
     
     background-color: #1da1f2;
     color:white;
-    margin-top:40%;
+    margin-top:30%;
     
 }
 
@@ -42,9 +42,14 @@ a.twitter-btn:hover{
 }
 
 .h2index{
-    margin-top: 220px;
+    margin-top: 320px;
     font-size: 85px;
     
+}
+
+.h2index2{
+    
+    font-size: 65px;
 }
 
 .h3index{
@@ -67,10 +72,10 @@ a.twitter-btn:hover{
     
     height: 1000px;
     background: red; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(#3eb991, #a6d9c2); /* For Safari 5.1 to 6.0 */
+    background: -webkit-linear-gradient(#62c6a5, #9466c9); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(#3eb991, #a6d9c2); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(#3eb991, #a6d9c2); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(#3eb991, #a6d9c2); /* Standard syntax */
+    background: linear-gradient(#62c6a5, #9466c9); /* Standard syntax */
     
 }
 
@@ -100,7 +105,7 @@ footer{
      
   bottom: 0;
     height: 120px;
-    background-color:#3eb991;
+    background-color:#62c6a5;
     color: white;
     padding-left: 5px;
 }
