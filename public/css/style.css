@@ -125,7 +125,8 @@ footer p{
     margin-top: 20px;
 }
 
-.carousel .item {
-height: 300px;
-    align-items: center;
+.carousel-caption h2{
+    color: black;
 }
+
+
