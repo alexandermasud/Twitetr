@@ -70,7 +70,7 @@ a.twitter-btn:hover{
 
 #grad {
 
-    height: 100%;
+    height: 950px;
     background: red; /* For browsers that do not support gradients */
     background: -webkit-linear-gradient(#62c6a5, #9466c9); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(#3eb991, #a6d9c2); /* For Opera 11.1 to 12.0 */
@@ -109,7 +109,6 @@ footer{
   background-color: #62c6a5;
   color: white;
   text-align: center;
-
 }
 
 footer p{
@@ -130,16 +129,10 @@ footer p{
     color: black;
 }
 
-a.left.carousel-control {
-  height: 70%;
-  top: 15%;
-
-
-}
-
-a.right.carousel-control{
-    height: 70%;
-    top: 15%;
-
-
+#h3_special{
+    text-align: center;
+    margin: auto;
+    width: 50%;
+    padding-bottom: 5%;
+    padding-top: 2%;
 }
