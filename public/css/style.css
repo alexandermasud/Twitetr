@@ -70,7 +70,7 @@ a.twitter-btn:hover{
 
 #grad {
 
-    height: 950px;
+    height: 100%;
     background: red; /* For browsers that do not support gradients */
     background: -webkit-linear-gradient(#62c6a5, #9466c9); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(#3eb991, #a6d9c2); /* For Opera 11.1 to 12.0 */
@@ -135,4 +135,18 @@ footer p{
     width: 50%;
     padding-bottom: 5%;
     padding-top: 2%;
+}
+
+a.left.carousel-control {
+  height: 70%;
+  top: 15%;
+
+
+}
+
+a.right.carousel-control{
+    height: 70%;
+    top: 15%;
+
+
 }
