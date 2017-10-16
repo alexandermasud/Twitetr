@@ -1,0 +1,39 @@
+<div class="container">
+<div class="row"><h1 class="h1index">@{{user.twitterhandle}}</h1></div>
+<div class="row"><h3 class="h3index">Skriv ett tweet så fixar vi rättstavningen</h3></div>
+
+<form method="post" action="/tweet">
+<input type="text" name="twitterid" value="{{user.twitterid}}" readonly hidden>
+ 
+ <div class="row">
+ 
+
+  <div class="col-lg-4"></div>
+     <div class="col-lg-4">
+      <div class="form-group-lg">
+        <textarea class="form-control-lg" rows="5" id="tweetText" name="tweetText"></textarea>
+      </div>
+  </div>
+  
+  <div class="col-lg-4"></div>
+ 
+
+  </div>
+
+    <div class="row">
+       <div class="col-lg-4"></div>
+        
+            <div class="col-lg-4">
+          <div class="col-lg-4">
+          <button type="submit" class="btn btn-outline-secondary twitter-btncolor btn-block"> Tweeta! </button>
+         </div>
+       </div>
+       
+       <div class="col-lg-4"></div>
+  </div>
+</form>
+
+<div class="pushfooter"> </div>
+
+
+</div>

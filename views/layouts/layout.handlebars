@@ -1,36 +1,129 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
+   
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>Twitetr</title>
     
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/css/style.css" rel="stylesheet">
 	<link href="/css/font-awesome.css" rel="stylesheet">
+	<link href="/css/animate.css" rel="stylesheet" >
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	
-    
-    
 </head>
 <body>
-    
-<nav></nav>
+<div id="grad">
+<div class="animated fadeIn">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			
+			
+			
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="/">Twitetr</a>
+					</li>
+					
+				
+				</ul>
+				<ul class="nav navbar-nav nav-pills pull-right">
+					{{#if user}}
+
+					<li role="presentation">
+                        <input type="text" class="btn btn-outline-secondary twitter-btncolor btn-block" value="@{{user.twitterhandle}}" readonly>
+
+					</li>
+					<li role="presentation">
+						<a class="btn btn-outline-secondary twitter-btncolor btn-block" href="auth/logout">Logga ut</a>
+					</li>
+					
+					
+					{{else}}
+					
+					<li role="presentation">
+						<a class="btn btn-outline twitter-btncolor twitter-btncolor btn-block" href="auth/twitter">Logga in</a>
+					</li>
+					
+					
+					{{/if}}
+				</ul>
+			</div>
+			
+			
+</nav>
+   
+
+        
+        {{#if success_msg}}
+		    <div class="alert alert-success alert-dismissible show alert-custom flash-msg" role="alert">
+                <button aria-label="Close" class="close" data-dismiss="alert" type="button"><span aria-hidden="true">&times;</span></button>
+                {{{success_msg}}}
+            </div>
+        {{/if}}
+        
+        {{#if error_msg}}
+		    <div class="alert alert-danger alert-dismissible show alert-custom flash-msg" role="alert">
+                <button aria-label="Close" class="close" data-dismiss="alert" type="button"><span aria-hidden="true">&times;</span></button>
+                {{{error_msg}}}
+            </div>
+        {{/if}} 
+                    
+                    
+         {{#if fail_msg}}
+		    <div class="alert alert-danger alert-dismissible show alert-custom flash-msg" role="alert">
+                <button aria-label="Close" class="close" data-dismiss="alert" type="button"><span aria-hidden="true">&times;</span></button>
+                {{{fail_msg}}}
+            </div>
+        {{/if}} 
+                    
+         {{#if error}}
+		    <div class="alert alert-danger alert-dismissible show alert-custom flash-msg" role="alert">
+                <button aria-label="Close" class="close" data-dismiss="alert" type="button"><span aria-hidden="true">&times;</span></button>
+                {{{error}}}
+            </div>
+        {{/if}} 
+                    
+        {{#if errors}}
+		    <div class="alert alert-danger alert-dismissible show alert-custom flash-msg" role="alert">
+            <button aria-label="Close" class="close" data-dismiss="alert" type="button"><span aria-hidden="true">&times;</span></button>
+                {{{errors}}}
+            </div>
+        {{/if}} 
+                    
+                    
+         {{#if errors}}
+             {{#each error}}
+		    <div class="alert alert-danger alert-dismissible show alert-custom flash-msg" role="alert">
+                <button aria-label="Close" class="close" data-dismiss="alert" type="button"><span aria-hidden="true">&times;</span></button>
+                    {{{error_msg}}}
+            </div>
+            {{/each}}
+        {{/if}} 
 
 
 {{{body}}}
 
+    <footer>
+    <h3>Om Applikationen</h3>
+    <p id="fakulteten">Fakulteten för Teknik och samhälle</p>
+    <br>
+    <p id="malmo">&#9400 Malmö Högskola</p>
+    </footer>
 
 
-
-    <script src="https://code.jquery.com/jquery-3.2.1.js"   integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js">
-	</script> 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script> 
 	
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js">
-	</script> 
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script> 
 	
-	<script src="/js/script.js">
-	</script>
+	<script src="/js/script.js"></script>
 
+</div>
+</div>
 </body>
 </html>

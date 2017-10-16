@@ -1,0 +1,132 @@
+.twitter-btn{
+    
+    background-color: #1da1f2;
+    color:white;
+    margin-top:30%;
+    
+}
+
+
+.twitter-btncolor{
+    background-color: #1da1f2;
+    color:white;
+    
+}
+a.twitter-btn:hover{
+    
+    background-color: #0094ef;
+    color:white;
+}
+
+.twitter-btncolor:hover{
+    
+    background-color: #0094ef;
+    color:white;
+}
+
+.twitter-btn-send{
+    
+    background-color: #1da1f2;
+    color:white;
+}
+
+.background{
+    
+    background-color: #3eb991;
+}
+
+.h1index{
+    margin-top: 20px;
+    color:white;
+    font-size: 105px;
+}
+
+.h2index{
+    margin-top: 320px;
+    font-size: 85px;
+    
+}
+
+.h2index2{
+    
+    font-size: 65px;
+}
+
+.h3index{
+    
+    margin-top:100px;
+    color:white;
+    font-size: 25px;
+    
+}
+
+.h4index{
+    
+    margin-top:50px;
+    font-size: 20px;
+    
+}
+
+
+#grad {
+    
+    height: 1000px;
+    background: red; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#62c6a5, #9466c9); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#3eb991, #a6d9c2); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#3eb991, #a6d9c2); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#62c6a5, #9466c9); /* Standard syntax */
+    
+}
+
+.componentlogos{
+    
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.indexdownarrow{
+    
+     color:white;
+    
+}
+
+a.indexdownarrow:hover{
+    
+     color:white;
+    
+}
+.pushfooter{
+    
+    margin-bottom: 320px;
+}
+
+footer{
+     
+  bottom: 0;
+padding-top: 0;
+    height: 120px;
+    background-color:#62c6a5;
+    color: white;
+    padding-left: 5px;
+}
+
+footer p{
+    display: inline;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#fakulteten, #malmo{
+    margin-left: 2px;
+}
+
+#tweetText{
+    margin-top: 20px;
+}
+
+.carousel-caption h2{
+    color: black;
+}
+
+
