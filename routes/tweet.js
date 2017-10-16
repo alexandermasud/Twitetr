@@ -23,9 +23,13 @@ router.get('/tweet', function(req, res) {
 router.post('/tweet',  function(req, res) {
       var arr = (req.body.tweetText).split(/\s+/);
       console.log('arr = ' + arr)
+    
       // OBS EGEN NYCKEL! -- OBS EGEN NYCKEL! -- OBS EGEN NYCKEL! -- OBS EGEN NYCKEL! -- OBS EGEN NYCKEL! -- OBS EGEN NYCKEL!
-     // http://api.libris.kb.se/bibspell/
-    //Marika: CFFA1878A66E1C29C8D6F797457EDC8B
+      // http://api.libris.kb.se/bibspell/
+    
+      //Marika: CFFA1878A66E1C29C8D6F797457EDC8B
+    
+      //Alex: 3E33089FD77A3F6651FC8F22F1C7B08E
     
         var url = "http://api.libris.kb.se/bibspell/spell?query={"+arr+"}&key=CFFA1878A66E1C29C8D6F797457EDC8B"
 
@@ -33,17 +37,22 @@ router.post('/tweet',  function(req, res) {
             url: url,
             xml: true
         }, function (error, response, body) {
+            
 
             if (!error && response.statusCode === 200) {
+                
+                
                 var y = body
                 console.log('y = ' + y)
-              var getSuggestions = y.querySelectorAll('term[changed="true"]');
-              document.write("<h2> Förslag på korrekta ord: </h2>")
-              for (var i = 0; i < getSuggestions.length; i++){
+                var getSuggestions = y.querySelectorAll('term[changed="true"]');
+                document.write("<h2> Förslag på korrekta ord: </h2>")
+                for (var i = 0; i < getSuggestions.length; i++){
                 document.write("<p>" + getSuggestions[i].childNodes[0].nodeValue + "<p>")
               }
-                }
-              })
+                
+            }
+              
+        })
 
 
 /*
@@ -87,6 +96,8 @@ mongo.connect(url, function(err, db) {
 
 });
 */
+    
+    
 });
 
 
