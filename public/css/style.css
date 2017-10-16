@@ -104,6 +104,7 @@ a.indexdownarrow:hover{
 footer{
      
   bottom: 0;
+padding-top: 0;
     height: 120px;
     background-color:#62c6a5;
     color: white;
@@ -116,10 +117,15 @@ footer p{
     margin-right: 10px;
 }
 
-#philip, #malmo{
+#fakulteten, #malmo{
     margin-left: 2px;
 }
 
 #tweetText{
     margin-top: 20px;
+}
+
+.carousel .item {
+height: 300px;
+    align-items: center;
 }
