@@ -128,3 +128,11 @@ footer p{
 .carousel-caption h2{
     color: black;
 }
+
+#h3_special{
+    text-align: center;
+    margin: auto;
+    width: 50%;
+    padding-bottom: 5%;
+    padding-top: 2%;
+}
