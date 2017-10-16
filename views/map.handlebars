@@ -4,16 +4,30 @@
 var xhr = new XMLHttpRequest();
 xhr.onreadystatechange = function() {
     if (xhr.readyState == XMLHttpRequest.DONE) {
-        alert(xhr.responseText);
+        var y = xhr.responseXML;
+        console.log(y)
+        var getTagname = y.getElementsByTagName("query");
+        document.write("<h2> Ditt twittermeddelande: </h2>")
+        for (var i = 0; i < getTagname.length; i++){
+          document.write(getTagname[i].childNodes[0].nodeValue);
+
+        }
+
+        document.write("<br>")
+
+        var getSuggestions = y.querySelectorAll('term[changed="true"]');
+        document.write("<h2> Förslag på korrekta ord: </h2>")
+        for (var i = 0; i < getSuggestions.length; i++){
+          document.write("<p>" + getSuggestions[i].childNodes[0].nodeValue + "<p>")
+        }
+
     }
 }
 
-var cars = ["rolligt", 'somaren']
-var car = "rolligt"
+var ListaMedText = ["roligt","somaren"]
 
 
-
-xhr.open('GET', "http://api.libris.kb.se/bibspell/spell?query={"+cars+"}&key=84DA2F0C4816075538ECED72534B17F4", true);
+xhr.open('GET', "http://api.libris.kb.se/bibspell/spell?query={"+ListaMedText+"}&key=84DA2F0C4816075538ECED72534B17F4", true);
 xhr.send(null);
 
 </script>
