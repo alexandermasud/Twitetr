@@ -7,6 +7,7 @@ var session = require('express-session');
 var passport = require('passport');
 var methodOverride = require('method-override');
 var Twitter = require('twitter');
+var request = require('request');
 
 var mongo = require('mongodb');
 var mongoose = require('mongoose');

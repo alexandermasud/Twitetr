@@ -10,6 +10,8 @@ var url = 'mongodb://admin:admin@ds119395.mlab.com:19395/webbtjanser';
 
 var Twitter = require('twitter');
 
+var request = require('request');
+
 router.get('/tweet', function(req, res) {
 
     res.render('tweet');
@@ -19,9 +21,32 @@ router.get('/tweet', function(req, res) {
 
 
 router.post('/tweet',  function(req, res) {
+      var arr = (req.body.tweetText).split(/\s+/);
+      console.log('arr = ' + arr)
+      // OBS EGEN NYCKEL! -- OBS EGEN NYCKEL! -- OBS EGEN NYCKEL! -- OBS EGEN NYCKEL! -- OBS EGEN NYCKEL! -- OBS EGEN NYCKEL!
+     // http://api.libris.kb.se/bibspell/
+    //Marika: CFFA1878A66E1C29C8D6F797457EDC8B
+    
+        var url = "http://api.libris.kb.se/bibspell/spell?query={"+arr+"}&key=CFFA1878A66E1C29C8D6F797457EDC8B"
+
+        request({
+            url: url,
+            xml: true
+        }, function (error, response, body) {
+
+            if (!error && response.statusCode === 200) {
+                var y = body
+                console.log('y = ' + y)
+              var getSuggestions = y.querySelectorAll('term[changed="true"]');
+              document.write("<h2> Förslag på korrekta ord: </h2>")
+              for (var i = 0; i < getSuggestions.length; i++){
+                document.write("<p>" + getSuggestions[i].childNodes[0].nodeValue + "<p>")
+              }
+                }
+              })
 
 
-
+/*
 mongo.connect(url, function(err, db) {
   if (err) throw err;
   db.collection("users").findOne({twitterid: (req.body.twitterid)}, function(err, result) {
@@ -61,7 +86,7 @@ mongo.connect(url, function(err, db) {
 
 
 });
-
+*/
 });
 
 

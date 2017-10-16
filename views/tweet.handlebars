@@ -25,7 +25,7 @@
 
             <div class="col-lg-4">
           <div class="col-lg-4">
-          <button type="button" class="btn btn-outline-secondary twitter-btncolor btn-block" onclick="go()"> Tweeta! </button>
+          <button type="submit" class="btn btn-outline-secondary twitter-btncolor btn-block"> Tweeta! </button>
          </div>
        </div>
 
@@ -37,28 +37,3 @@
 
 
 </div>
-
-<script>
-
-  function go() {
-      var c1 = document.getElementById('tweetText').value;
-      var y = c1;
-      var arr = y.split(/\s+/);
-      console.log(arr)
-      xhr.open('GET', "http://api.libris.kb.se/bibspell/spell?query={"+arr+"}&key=84DA2F0C4816075538ECED72534B17F4", true);
-      xhr.send(null);
-      var xhr = new XMLHttpRequest();
-      xhr.onreadystatechange = function() {
-          if (xhr.readyState == XMLHttpRequest.DONE) {
-              var y = xhr.responseXML;
-              console.log(y)
-              var getSuggestions = y.querySelectorAll('term[changed="true"]');
-              document.write("<h2> Förslag på korrekta ord: </h2>")
-              for (var i = 0; i < getSuggestions.length; i++){
-                document.write("<p>" + getSuggestions[i].childNodes[0].nodeValue + "<p>")
-    }
-  }
-}
-}
-
-</script>
