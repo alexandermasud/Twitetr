@@ -72,10 +72,10 @@ a.twitter-btn:hover{
 
     height: 950px;
     background: red; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(#62c6a5, #9466c9); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(#3eb991, #a6d9c2); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(#3eb991, #a6d9c2); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(#62c6a5, #9466c9); /* Standard syntax */
+    background: -webkit-linear-gradient(#1fc68f, #7428cb); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#1fc68f, #7428cb); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#1fc68f, #7428cb); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#1fc68f, #7428cb); /* Standard syntax */
 
 }
 
