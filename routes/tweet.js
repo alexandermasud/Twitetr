@@ -10,9 +10,10 @@ var url = 'mongodb://admin:admin@ds119395.mlab.com:19395/webbtjanser';
 
 var Twitter = require('twitter');
 
-var request = require('request');
-var parseString = require('xml2js').parseString;
-var util = require('util');
+
+
+
+
 
 
 router.get('/tweet', function(req, res) {
@@ -25,42 +26,114 @@ router.get('/tweet', function(req, res) {
 
 router.post('/tweet',  function(req, res) {
     
-      var arr = (req.body.tweetText).split(/\s+/);
-      console.log('arr = ' + arr)
+    var tweetText = (req.body.tweetText)
     
-      // OBS EGEN NYCKEL! -- OBS EGEN NYCKEL! -- OBS EGEN NYCKEL! -- OBS EGEN NYCKEL! -- OBS EGEN NYCKEL! -- OBS EGEN NYCKEL!
-      // http://api.libris.kb.se/bibspell/
-    
-      //Marika: CFFA1878A66E1C29C8D6F797457EDC8B
-    
-      //Alex: 3E33089FD77A3F6651FC8F22F1C7B08E
-    
-        var url = "http://api.libris.kb.se/bibspell/spell?query={" + arr + "}&key=3E33089FD77A3F6651FC8F22F1C7B08E"
+     // v7 b6c71184b289418d9f6dcbdb5dff3fde
+      
+    'use strict';
 
-        request({
-            url: url,
-            xml: true
-        }, function (error, response, body) {
+let https = require ('https');
+
+let host = 'api.cognitive.microsoft.com';
+let path = '/bing/v7.0/spellcheck/';
+
+/* NOTE: Replace this example key with a valid subscription key (see the Prequisites section above). Also note v5 and v7 require separate subscription keys. */
+let key = 'b6c71184b289418d9f6dcbdb5dff3fde';
+
+// These values are used for optional headers (see below).
+// let CLIENT_ID = "<Client ID from Previous Response Goes Here>";
+// let CLIENT_IP = "999.999.999.999";
+// let CLIENT_LOCATION = "+90.0000000000000;long: 00.0000000000000;re:100.000000000000";
+
+let params = {
+    "text" : tweetText,
+    "mode" : "spell",
+    "mkt" : "sv",
+};
+
+var query_string = '?';
+for (let param in params) {
+    query_string += param + '=' + params[param] + '&';
+}
+query_string = encodeURI (query_string);
+
+let request_params = {
+    method : 'POST',
+    hostname : host,
+    path : path + query_string,
+    headers : {
+        'Ocp-Apim-Subscription-Key' : key,
+//        'X-Search-Location' : CLIENT_LOCATION,
+//        'X-MSEdge-ClientID' : CLIENT_ID,
+//        'X-MSEdge-ClientIP' : CLIENT_ID,
+    }
+};
+
+let response_handler = function (response) {
+    let body = '';
+    response.on ('data', function (d) {
+        body += d;
+    });
+    response.on ('end', function () {
+        
+        
+        
+        var x = JSON.parse(body);
+        
+        
+        
+        
+        var newWord = []
+        var oldWord = []
+        var newTweet = []
+        
+        var oldTweet = tweetText;
+         
+        
+        for (var i = 0; i < x.flaggedTokens.length; i++) {
             
+            
+            
+            
+            
+            
+            
+             oldWord.push(x.flaggedTokens[i].token)
+             newWord.push(x.flaggedTokens[i].suggestions[0].suggestion)
 
-            if (!error && response.statusCode === 200) {
+            
+             newTweet.push(oldTweet.replace((oldWord[i]), (newWord[i])));
 
-                var xml = body;
-                parseString(xml, function (err, result) {
-                    
-                    var spellcheck = (util.inspect(result.bibspell.suggestion[0].term, false, null))
-                    
-                    console.log(spellcheck)
-                    
 
-                });
-                
+            
+        }
+        
+            console.log('oldWord: ' + (oldWord))
+            console.log('newWord: ' + (newWord))
+       
+        
+            console.log('newTweet: ' + newTweet)
+        
+        
+        res.render('tweet', {newTweet});
+        
 
-          
-                
-            }
-              
-        })
+       
+    });
+    response.on ('error', function (e) {
+        console.log ('Error: ' + e.message);
+    });
+};
+
+var req = https.request (request_params, response_handler);
+req.end ();
+    
+    
+    
+
+    
+    
+  
 
 
 /*
@@ -110,3 +183,5 @@ mongo.connect(url, function(err, db) {
 
 
 module.exports = router;
+
+
