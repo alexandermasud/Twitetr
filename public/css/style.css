@@ -102,7 +102,6 @@ a.indexdownarrow:hover{
 }
 
 footer{
-    margin-top: 500px;
   right: 0;
   bottom: 0;
   left: 0;
@@ -110,10 +109,6 @@ footer{
   background-color: #62c6a5;
   color: white;
   text-align: center;
-}
-
-#myCarousel{
-    margin-top: 300px;
 }
 
 footer p{
