@@ -138,11 +138,16 @@ footer p{
   height: 150px;
 }
 
-.carousel-control.left, .carousel-control.right{ 
+.carousel-control.left, .carousel-control.right{
     background: none !important;
     filter: progid:none !important;>
 }
 
 .carousel-content {
     display: block;
+}
+
+#user-twitter{
+  height: 52px;
+
 }
