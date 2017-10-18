@@ -102,6 +102,7 @@ a.indexdownarrow:hover{
 }
 
 footer{
+    margin-top: 500px;
   right: 0;
   bottom: 0;
   left: 0;
@@ -145,4 +146,8 @@ footer p{
 
 .carousel-content {
     display: block;
+}
+
+#myCarousel{
+    margin-top: 300px;
 }
