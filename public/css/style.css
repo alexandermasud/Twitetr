@@ -1,3 +1,14 @@
+body{
+  background: -webkit-linear-gradient(#1fc68f, #7428cb)!important; /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#1fc68f, #7428cb)!important; /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#7D2CC4, #7D2CC4)!important; /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#732CCA, #732CCA)!important; /* Standard syntax */
+
+}
+
+
+
+
 .twitter-btn{
 
     background-color: #1da1f2;
@@ -110,6 +121,7 @@ footer{
   background-color: #62c6a5;
   color: white;
   text-align: center;
+  border-collapse: collapse;
 }
 
 #myCarousel{
