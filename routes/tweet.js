@@ -25,11 +25,11 @@ router.get('/tweet', function(req, res) {
 
 
 router.post('/tweet',  function(req, res) {
-    
+
     var tweetText = (req.body.tweetText)
-    
+
      // v7 b6c71184b289418d9f6dcbdb5dff3fde
-      
+
     'use strict';
 
 let https = require ('https');
@@ -75,50 +75,51 @@ let response_handler = function (response) {
         body += d;
     });
     response.on ('end', function () {
-        
-        
-        
+
+
+
         var x = JSON.parse(body);
-        
-        
-        
-        
+
+
+
+
         var newWord = []
         var oldWord = []
         var newTweet = []
-        
+        var oldestTweet = []
+        var makingArray = new Array()
+        makingArray = tweetText.split(" ");
+        oldestTweet.push(tweetText)
         var oldTweet = tweetText;
-         
-        
+
+
+
         for (var i = 0; i < x.flaggedTokens.length; i++) {
-            
-            
-            
-            
-            
-            
-            
+
              oldWord.push(x.flaggedTokens[i].token)
              newWord.push(x.flaggedTokens[i].suggestions[0].suggestion)
 
-            
              newTweet.push(oldTweet.replace((oldWord[i]), (newWord[i])));
 
 
-            
-        }
-        
-            console.log('oldWord: ' + (oldWord))
-            console.log('newWord: ' + (newWord))
-       
-        
-            console.log('newTweet: ' + newTweet)
-        
-        
-        res.render('tweet', {newTweet});
-        
 
-       
+        }
+
+        var baratest = []
+        var c = 0;
+        for (var j = 0; j < makingArray.length; j++){
+          if(makingArray[j] == oldWord[c]){
+            baratest.push(newWord[c])
+            c = c+1
+          }
+          else{
+            baratest.push(makingArray[j])
+          }
+        }
+
+
+
+
     });
     response.on ('error', function (e) {
         console.log ('Error: ' + e.message);
@@ -127,13 +128,13 @@ let response_handler = function (response) {
 
 var req = https.request (request_params, response_handler);
 req.end ();
-    
-    
-    
 
-    
-    
-  
+
+
+
+
+
+
 
 
 /*
@@ -177,11 +178,9 @@ mongo.connect(url, function(err, db) {
 
 });
 */
-    
-    
+
+
 });
 
 
 module.exports = router;
-
-
