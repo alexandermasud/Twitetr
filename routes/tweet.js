@@ -117,7 +117,7 @@ let response_handler = function (response) {
           }
         }
 
-
+        var y = res.render('tweet',{baratest});
 
 
     });
