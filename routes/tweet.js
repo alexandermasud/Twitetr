@@ -109,15 +109,19 @@ let response_handler = function (response) {
         var c = 0;
         for (var j = 0; j < makingArray.length; j++){
           if(makingArray[j] == oldWord[c]){
-            baratest.push(newWord[c])
+            baratest.push(newWord[c] + " ")
             c = c+1
           }
           else{
-            baratest.push(makingArray[j])
+            baratest.push(makingArray[j] + " ")
           }
         }
+        var y = ({baratest});
+        var cc = y.baratest.join('')
+        console.log(cc + typeof(cc))
 
-        var y = res.render('tweet',{baratest});
+
+        res.render('tweet',{cc});
 
 
     });
