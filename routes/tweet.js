@@ -120,6 +120,15 @@ let response_handler = function (response) {
         var cc = y.baratest.join('')
         console.log(cc + typeof(cc))
 
+        var ccCount = cc.length;
+        console.log(ccCount);
+        if (ccCount > 141){
+          console.log("Du får endast ange 140 tecken!");
+        }
+        else{
+          console.log("Tweetat");
+        }
+
 
         res.render('tweet',{cc});
 
