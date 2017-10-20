@@ -27,7 +27,7 @@ router.get('/tweet', function(req, res) {
 router.post('/tweet',  function(req, res) {
 
     var tweetText = (req.body.tweetText)
-    
+
     var language = (req.body.language)
 
      // v7 b6c71184b289418d9f6dcbdb5dff3fde
@@ -125,14 +125,14 @@ let response_handler = function (response) {
         var ccCount = cc.length;
         console.log(ccCount);
         if (ccCount > 141){
-          console.log("Du får endast ange 140 tecken!");
+          var checkTweet = "Du får endast ange 140 tecken!";
         }
         else{
-          console.log("Tweetat");
+          var checkTweet = "Tweetat";
         }
 
 
-        res.render('tweet',{cc});
+        res.render('tweet',{cc, tweet_msg: checkTweet});
 
 
     });
