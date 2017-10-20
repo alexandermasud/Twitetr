@@ -27,6 +27,8 @@ router.get('/tweet', function(req, res) {
 router.post('/tweet',  function(req, res) {
 
     var tweetText = (req.body.tweetText)
+    
+    var language = (req.body.language)
 
      // v7 b6c71184b289418d9f6dcbdb5dff3fde
 
@@ -48,7 +50,7 @@ let key = 'b6c71184b289418d9f6dcbdb5dff3fde';
 let params = {
     "text" : tweetText,
     "mode" : "spell",
-    "mkt" : "sv",
+    "mkt" : language,
 };
 
 var query_string = '?';
@@ -144,7 +146,7 @@ req.end ();
 
 
 
-
+console.log(language)
 
 
 

@@ -174,3 +174,7 @@ border-radius: 2rem;
 textarea {
     resize: none;
 }
+
+#sel1{
+    height: 30px;
+}
