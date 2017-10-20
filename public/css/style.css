@@ -150,18 +150,10 @@ footer p{
     padding-top: 2%;
 }
 
-.textarea {
-  width: 300px;
-  height: 150px;
-}
 
 .carousel-control.left, .carousel-control.right{
     background: none !important;
     filter: progid:none !important;>
-}
-
-.carousel-content {
-    display: block;
 }
 
 #user-twitter{
@@ -169,10 +161,16 @@ footer p{
 
 }
 
-
 .carousel-custom{
-    
     height: 450px;
     background-color: white;
    
+}
+
+.form-rounded {
+border-radius: 2rem;
+}
+
+textarea {
+    resize: none;
 }
