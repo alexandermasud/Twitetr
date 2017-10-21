@@ -14,11 +14,11 @@
 
 <div class="row">
     <div>
-     <label>Choose your language: </label>
+     <label><h5>Välj språk:</h5></label>
       <select class="form-control" name="language" id="sel1">
-           <option value="sv">Swedish</option>
-             <option value="ar">Arabic</option>
-             <option value="zh-CN">Chinese (People's Republic of China)</option>
+              <option value="sv">Swedish</option>
+              <option value="ar">Arabic</option>
+              <option value="zh-CN">Chinese (People's Republic of China)</option>
               <option value="zh-HK">Chinese (Hong Kong SAR)</option>
               <option value="zh-TW">Chinese (Taiwan)</option>
               <option value="da">Danish</option>
@@ -54,7 +54,6 @@
               <option value="es-MX">Spanish (Mexico)</option>
               <option value="es-ES">Spanish (Spain)</option>
               <option value="es-US">Spanish (United States)</option>
-              <option value="sv">Swedish</option>
               <option value="tr">Turkish</option>
       </select>
     </div>
@@ -66,7 +65,7 @@
   <div class="col-lg-4"></div>
      <div class="col-lg-4">
       <div class="form-group-lg">
-        <textarea class="form-control-lg form-rounded" rows="8" id="tweetText" name="tweetText" cols="50">{{cc}}</textarea>
+        <textarea class="form-control-lg form-rounded" rows="6" id="tweetText" name="tweetText" cols="40">{{cc}}</textarea>
       </div>
   </div>
 
@@ -88,32 +87,8 @@
   </div>
 </form>
 
-<div class="pushfooter"> </div>
+
 
 
 </div>
 
-<script>
-
-  function go() {
-      var c1 = document.getElementById('tweetText').value;
-      var y = c1;
-      var arr = y.split(/\s+/);
-      console.log(arr)
-      xhr.open('GET', "http://api.libris.kb.se/bibspell/spell?query={"+arr+"}&key=84DA2F0C4816075538ECED72534B17F4", true);
-      xhr.send(null);
-      var xhr = new XMLHttpRequest();
-      xhr.onreadystatechange = function() {
-          if (xhr.readyState == XMLHttpRequest.DONE) {
-              var y = xhr.responseXML;
-              console.log(y)
-              var getSuggestions = y.querySelectorAll('term[changed="true"]');
-              document.write("<h2> Förslag på korrekta ord: </h2>")
-              for (var i = 0; i < getSuggestions.length; i++){
-                document.write("<p>" + getSuggestions[i].childNodes[0].nodeValue + "<p>")
-    }
-  }
-}
-}
-
-</script>
