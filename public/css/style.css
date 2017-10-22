@@ -119,7 +119,7 @@ textarea {
     
 }
 
-.carousel-custom{
+.carousel-custom {
     
     padding-left: 10%;
     padding-right: 10%;
@@ -128,8 +128,35 @@ textarea {
     background-color: #ffffff;
 }
 
-.carousel-arrows-color{
-    
+.carousel-arrows-color {
     color: black;
    
+}
+
+.carousel-1-pic {
+    margin-top: 100px;
+    width: 280px;
+}
+.carousel-1-node {
+    margin-top: 60px;
+    width: 280px;
+}
+
+.carousel-2-bing {
+    
+    margin-top: 100px;
+    width: 300px;
+    
+}
+
+.carousel-2-twitter {
+    
+    margin-top: 60px;
+    width: 200px;
+    
+}
+
+.h2-carousel {
+    
+    margin-top: 20px;
 }
