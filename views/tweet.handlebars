@@ -59,7 +59,8 @@
   <div class="col-lg-4"></div>
      <div class="col-lg-4">
       <div class="form-group-lg">
-        <textarea class="form-control-lg form-rounded" rows="6" id="tweetText" name="tweetText" cols="40">{{cc}}</textarea>
+        <textarea id="textarea" class="form-control-lg form-rounded" rows="6" id="tweetText" name="tweetText" cols="40" maxlength="140">{{cc}}</textarea>
+
       </div>
   </div>
 
@@ -78,9 +79,19 @@
        </div>
 
        <div class="col-lg-4"></div>
+       <span id="chars">140</span> <p id="newid">characters remaining</p>
   </div>
 </form>
 
+
+<script>
+var maxLength = 140;
+$('textarea').keyup(function() {
+var length = $(this).val().length;
+var length = maxLength-length;
+$('#chars').text(length);
+});
+</script>
 
 
 

@@ -76,7 +76,7 @@ a.twitter-btn:hover{
 
 
 #tweetText{
-    
+
     margin-top: 20px;
 
 }
@@ -104,23 +104,23 @@ textarea {
   top: 55px;
   right: 0px;
   left: 0px;
-  
+
 }
 
 
-.carousel-indicators .active{ 
-    
+.carousel-indicators .active{
+
     background-color: black;
 }
 
 .carousel-indicators li{
-    
+
     background-color: grey;
-    
+
 }
 
 .carousel-custom {
-    
+
     padding-left: 10%;
     padding-right: 10%;
     margin-top: 375px;
@@ -130,7 +130,7 @@ textarea {
 
 .carousel-arrows-color {
     color: black;
-   
+
 }
 
 .carousel-1-pic {
@@ -143,20 +143,30 @@ textarea {
 }
 
 .carousel-2-bing {
-    
+
     margin-top: 100px;
     width: 300px;
-    
+
 }
 
 .carousel-2-twitter {
-    
+
     margin-top: 60px;
     width: 200px;
-    
+
 }
 
 .h2-carousel {
-    
+
     margin-top: 20px;
+}
+
+#chars{
+  color: white;
+  margin-right: 5px;
+
+}
+#newid{
+  color: white;
+
 }
