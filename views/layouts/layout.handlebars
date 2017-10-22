@@ -9,8 +9,8 @@
 	<link href="/css/font-awesome.css" rel="stylesheet">
 	<link href="/css/animate.css" rel="stylesheet" >
     <link href="/css/style.css" rel="stylesheet">
-    
- 
+
+
 
 </head>
 <body>
@@ -101,6 +101,20 @@
                     {{{error_msg}}}
             </div>
             {{/each}}
+        {{/if}}
+
+        {{#if tweetError_msg}}
+        <div class="alert alert-danger alert-dismissible show alert-custom flash-msg" role="alert">
+                <button aria-label="Close" class="close" data-dismiss="alert" type="button"><span aria-hidden="true">&times;</span></button>
+                {{{tweetError_msg}}}
+            </div>
+        {{/if}}
+
+        {{#if tweet_msg}}
+        <div class="alert alert-success alert-dismissible show alert-custom flash-msg" role="alert">
+                <button aria-label="Close" class="close" data-dismiss="alert" type="button"><span aria-hidden="true">&times;</span></button>
+                {{{tweet_msg}}}
+            </div>
         {{/if}}
 </div>
 

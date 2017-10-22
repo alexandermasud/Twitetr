@@ -126,13 +126,15 @@ let response_handler = function (response) {
         console.log(ccCount);
         if (ccCount > 141){
           var checkTweet = "Du får endast ange 140 tecken!";
+          res.render('tweet',{cc, tweetError_msg: checkTweet});
         }
         else{
           var checkTweet = "Tweetat";
+          res.render('tweet',{cc, tweet_msg: checkTweet});
         }
 
 
-        res.render('tweet',{cc, tweet_msg: checkTweet});
+
 
 
     });
