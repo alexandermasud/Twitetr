@@ -11,12 +11,17 @@ var url = 'mongodb://admin:admin@ds119395.mlab.com:19395/webbtjanser';
 var Twitter = require('twitter');
 
 
+function isLoggedIn(req, res, next) {
+
+    if (req.isAuthenticated())
+        return next();
+    res.redirect('/');
+}
 
 
 
 
-
-router.get('/tweet', function(req, res) {
+router.get('/tweet',isLoggedIn, function(req, res) {
 
     res.render('tweet');
 
