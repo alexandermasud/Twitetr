@@ -8,47 +8,47 @@
 
 <div class="row">
     <div>
-     <label><h5 style="color:white;">Välj språk:</h5></label>
+     <label><h5 style="color:white;">Språk:</h5></label>
       <select class="form-control" name="language" id="sel1">
-              <option value="sv">Swedish</option>
-              <option value="ar">Arabic</option>
-              <option value="zh-CN">Chinese (People's Republic of China)</option>
-              <option value="zh-HK">Chinese (Hong Kong SAR)</option>
-              <option value="zh-TW">Chinese (Taiwan)</option>
-              <option value="da">Danish</option>
-              <option value="n1-BE">Dutch (Belgium)</option>
-              <option value="n1-NL">Dutch (Netherlands)</option>
-              <option value="en-AU">English (Australia)</option>
-              <option value="en-CA">English (Canada)</option>
-              <option value="en-IN">English (India)</option>
-              <option value="en-ID">English (Indonesia)</option>
-              <option value="en-MY">English (Malaysia)</option>
-              <option value="en-NZ">English (New Zealand)</option>
-              <option value="en-PH">English (Philippines)</option>
-              <option value="en-ZA">English (South Africa)</option>
-              <option value="en-GB">English (United Kingdom)</option>
-              <option value="en-US">English (United states)</option>
-              <option value="fi">Finish</option>
-              <option value="fr-BE">French (Belgium)</option>
-              <option value="fr-CA">French (Canada)</option>
-              <option value="fr-FR">French (France)</option>
-              <option value="fr-CH">French (Switzerland)</option>
-              <option value="de-AT">German (Austria)</option>
-              <option value="de-DE">German (Germany)</option>
-              <option value="de-CH">German (Switzerland)</option>
-              <option value="it">Italian</option>
-              <option value="ja">Japanese</option>
-              <option value="ko">Korean</option>
-              <option value="no">Norwegian</option>
-              <option value="pl">Polish</option>
-              <option value="pt-BR">Portuguese (Brazil)</option>
-              <option value="pt-PT">Portuguese (Portugal)</option>
-              <option value="ru">Russian</option>
-              <option value="es-AR">Spanish (Argentina)</option>
-              <option value="es-MX">Spanish (Mexico)</option>
-              <option value="es-ES">Spanish (Spain)</option>
-              <option value="es-US">Spanish (United States)</option>
-              <option value="tr">Turkish</option>
+              <option value="sv">Svenska</option>
+              <option value="ar">Arabiska</option>
+              <option value="da">Danska</option>
+              <option value="en-AU">Engelska (Australien)</option>
+              <option value="en-CA">Engelska (Kanada)</option>
+              <option value="en-IN">Engelska (Indien)</option>
+              <option value="en-ID">Engelska (Indonesien)</option>
+              <option value="en-MY">Engelska (Malaysia)</option>
+              <option value="en-NZ">Engelska (Nya Zealand)</option>
+              <option value="en-PH">Engelska (Filippinerna)</option>
+              <option value="en-ZA">Engelska (Sydafrika)</option>
+              <option value="en-GB">Engelska (Storbritannien)</option>
+              <option value="en-US">Engelska (USA)</option>
+              <option value="fi">Finska</option>
+              <option value="fr-BE">Franska (Belgien)</option>
+              <option value="fr-CA">Franska (Kanada)</option>
+              <option value="fr-FR">Franska (Frankrike)</option>
+              <option value="fr-CH">Franska (Schweiz)</option>
+              <option value="n1-BE">Holländska (Belgien)</option>
+              <option value="n1-NL">Holländska (Nederländerna)</option>
+              <option value="it">Italienska</option>
+              <option value="ja">Japanska</option>
+              <option value="zh-CN">Kinesiska (Kina)</option>
+              <option value="zh-HK">Kinesiska (Hong Kong SAR)</option>
+              <option value="zh-TW">Kinesiska (Taiwan)</option>
+              <option value="ko">Koreanska</option>
+              <option value="no">Norska</option>
+              <option value="pl">Polska</option>
+              <option value="pt-BR">Portugisiska (Brasilien)</option>
+              <option value="pt-PT">Portugisiska (Portugal)</option>
+              <option value="ru">Ryska</option>
+              <option value="es-AR">Spanska (Argentina)</option>
+              <option value="es-MX">Spanska (Mexiko)</option>
+              <option value="es-ES">Spanska (Spanien)</option>
+              <option value="es-US">Spanska (USA)</option>
+              <option value="de-AT">Tyska (Österrike)</option>
+              <option value="de-DE">Tyska (Tyskland)</option>
+              <option value="de-CH">Tyska (Schweiz)</option>
+              <option value="tr">Turkiska</option>
       </select>
     </div>
 </div>
@@ -70,28 +70,22 @@
   </div>
 
     <div class="row">
-       <div class="col-lg-4"></div>
+      
 
+           <div class="col-lg-4"></div>
             <div class="col-lg-4">
-          <div class="col-lg-4">
-          <button type="submit" class="btn btn-outline-secondary twitter-btncolor btn-block"> Tweeta! </button>
-         </div>
+          <button type="submit" class="btn btn-outline-secondary twitter-btncolor btn-block" style="width: 150px;"> Tweeta! </button>
+        
        </div>
 
-       <div class="col-lg-4"></div>
-       <span id="chars">140</span> <p id="newid">characters remaining</p>
-  </div>
+       <div class="col-lg-1"></div>
+       <p id="newid">(</p><span id="chars">0</span><p id="newid"> / 140)</p>
+    
+      </div>
 </form>
 
 
-<script>
-var maxLength = 140;
-$('textarea').keyup(function() {
-var length = $(this).val().length;
-var length = maxLength-length;
-$('#chars').text(length);
-});
-</script>
+
 
 
 
