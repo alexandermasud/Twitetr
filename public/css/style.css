@@ -96,7 +96,7 @@ textarea {
 /* Drodown menyn med språk */
 
 #sel1{
-    height: 30px;
+    min-height: 40px;
 }
 
 
