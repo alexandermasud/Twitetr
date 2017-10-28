@@ -1,0 +1,74 @@
+<div class="container">
+    <div class="row"><h1 class="h1index">Twitetr</h1></div>
+    <div class="row"><h3 class="h3index">Tweet with spell checking from Bing</h3></div>
+    <div class="row">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+            {{#if user}}
+            <a class="btn btn-block twitter-btn" href="/tweet"><i class="fa fa-twitter fa-3x" aria-hidden="true"></i><p>READY FOR A TWEET</p></a>
+            {{else}}
+            <a class="btn btn-block twitter-btn" href="/auth/twitter"><i class="fa fa-twitter fa-3x" aria-hidden="true"></i><p>LET ME SIGN IN</p></a>
+            {{/if}}
+
+        </div>
+        <div class="col-lg-3"></div>
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active carousel-indicator-custom"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1" class="carousel-indicator-custom"></li>
+          
+          </ol>
+          <div class="carousel-inner carousel-custom">
+              <div class="carousel-item active">
+              <h2 class="h2-carousel">Powered by</h2>
+            <div class="row">
+             <div class="col-lg-3">
+              <img src="/img/nodejs-1.svg" class="carousel-1-node" alt="">
+              </div>
+              <div class="col-lg-3">
+              <img src="/img/express-109.svg" class="carousel-1-pic"  alt="...">
+              </div>
+              <div class="col-lg-3">
+              <img src="/img/handlebars-1.svg" class="carousel-1-pic"  alt="...">
+              </div>
+              <div class="col-lg-3">
+              <img src="/img/mongodb.svg" class="carousel-1-pic"  alt="...">
+              </div>
+              </div>
+            </div>
+              
+            <div class="carousel-item">
+            <h2 class="h2-carousel">APIs</h2>
+             <div class="row">
+             <div class="col-lg-3"></div>
+             <div class="col-lg-3">
+              <img src="/img/twitter.svg" class="carousel-2-twitter" alt="...">
+              </div>
+              <div class="col-lg-3">
+              <img src="/img/bing.svg" class="carousel-2-bing" alt="...">
+              </div>
+              <div class="col-lg-3"></div>
+              
+              
+              </div>
+            </div>
+             
+    
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span> <i class="fa fa-arrow-left carousel-arrows-color" aria-hidden="true"></i> </span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span> <i class="fa fa-arrow-right carousel-arrows-color" aria-hidden="true"></i> </span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+    </div>
+</div>
