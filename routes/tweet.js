@@ -34,6 +34,8 @@ router.post('/tweet',  function(req, res) {
     var tweetText = (req.body.tweetText)
 
     var language = (req.body.language)
+    
+    var twitterid = (req.body.twitterid)
 
      // v7 b6c71184b289418d9f6dcbdb5dff3fde
 
@@ -141,7 +143,7 @@ let response_handler = function (response) {
                 
               if (err) throw err;
                 
-              db.collection("users").findOne({twitterid: (req.body.twitterid)}, function(err, result) {
+              db.collection("users").findOne({twitterid: twitterid}, function(err, result) {
                   
                 if (err) throw err;
                 db.close();
@@ -158,14 +160,14 @@ let response_handler = function (response) {
               twitterClient.post('statuses/update', {status: (cc)}, function(error, tweet, response) {
                   if (!error) {
 
-                      req.flash('success_msg', 'Your tweet has been sent!');
+                      console.log('Tweet sent!')
                       res.redirect('/'); 
 
                   }
 
                   else{
 
-                        req.flash('fail_msg', 'Something went wrong');
+                        console.log('Tweet NOT sent!')
                         res.redirect('/');
                   }
 
