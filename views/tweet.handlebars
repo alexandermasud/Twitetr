@@ -1,7 +1,7 @@
 <div class="container">
 
 <div class="row"><h1 class="h1index">@{{user.twitterhandle}}</h1></div>
-<div class="row"><h3 class="h3index">Skriv ett tweet så fixar vi rättstavningen</h3></div>
+<div class="row"><h3 class="h3index">Write a tweet, we'll do the spelling</h3></div>
 
 <form method="post" action="/tweet">
 <input type="text" name="twitterid" value="{{user.twitterid}}" readonly hidden>
@@ -10,9 +10,14 @@
     <div>
      <label><h5 style="color:white;">Language:</h5></label>
       <select class="form-control" name="language" id="sel1">
-              <option value="sv">Svenska</option>
+              <option value="sv">Swedish</option>
               <option value="ar">Arabic</option>
+              <option value="zh-CN">Chinese (China)</option>
+              <option value="zh-HK">Chinese (Hong Kong SAR)</option>
+              <option value="zh-TW">Chinese (Taiwan)</option>
               <option value="da">Danish</option>
+              <option value="n1-BE">Dutch (Belgium)</option>
+              <option value="n1-NL">Dutch (Netherlands)</option>
               <option value="en-AU">English (Australia)</option>
               <option value="en-CA">English (Canada)</option>
               <option value="en-IN">English (India)</option>
@@ -28,13 +33,11 @@
               <option value="fr-CA">French (Canada)</option>
               <option value="fr-FR">French (France)</option>
               <option value="fr-CH">French (Switzerland)</option>
-              <option value="n1-BE">Dutch (Belgium)</option>
-              <option value="n1-NL">Dutch (Netherlands)</option>
+              <option value="de-AT">German (Austria)</option>
+              <option value="de-DE">German (Germany)</option>
+              <option value="de-CH">German (Switzerland)</option>
               <option value="it">Italian</option>
               <option value="ja">Japanese</option>
-              <option value="zh-CN">Chinese (China)</option>
-              <option value="zh-HK">Chinese (Hong Kong SAR)</option>
-              <option value="zh-TW">Chinese (Taiwan)</option>
               <option value="ko">Korean</option>
               <option value="no">Norwegian</option>
               <option value="pl">Polish</option>
@@ -45,9 +48,6 @@
               <option value="es-MX">Spanish (Mexico)</option>
               <option value="es-ES">Spanish (Spain)</option>
               <option value="es-US">Spanish (USA)</option>
-              <option value="de-AT">German (Austria)</option>
-              <option value="de-DE">German (Germany)</option>
-              <option value="de-CH">German (Switzerland)</option>
               <option value="tr">Turkish</option>
       </select>
     </div>
@@ -74,7 +74,7 @@
 
            <div class="col-lg-4"></div>
             <div class="col-lg-4">
-          <button type="submit" class="btn btn-outline-secondary twitter-btncolor btn-block" style="width: 150px;"> Tweeta! </button>
+          <button type="submit" class="btn btn-outline-secondary twitter-btncolor btn-block" style="width: 150px;"> Tweet! </button>
         
        </div>
 

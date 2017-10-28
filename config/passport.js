@@ -4,6 +4,7 @@ var passport = require('passport');
 var User = mongoose.model('users');
 
 module.exports = function(passport){
+    
 
 
     passport.use(new TwitterStrategy({
@@ -11,16 +12,13 @@ module.exports = function(passport){
     consumerKey:'mwuqq8HHKzDdim86v4tx2DRmI',
     consumerSecret:'pqt6mmV33wkgDN7R4ktoJ8eki7aPiGMLyoStT26V5PDjUi7Dvt',
     callbackURL:'/auth/twitter/callback',
-    includeEmail: true
   },
+                                     
   function(token, tokenSecret, profile, done) {
-        
-        
         
        var newUser = {
         twitterid: profile.id,
         twitterhandle: profile.username,   
-        email: profile.emails[0].value,
         token: token,
         tokenSecret: tokenSecret
       }

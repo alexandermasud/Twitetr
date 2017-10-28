@@ -129,17 +129,55 @@ let response_handler = function (response) {
 
         var ccCount = cc.length;
         console.log(ccCount);
+        
         if (ccCount > 141){
-          var checkTweet = "Du får endast ange 140 tecken!";
+          var checkTweet = "No more than 140 characters are allowed";
           res.render('tweet',{cc, tweetError_msg: checkTweet});
         }
+        
         else{
-          var checkTweet = "Tweetat";
-          res.render('tweet',{cc, tweet_msg: checkTweet});
-        }
+ 
+            mongo.connect(url, function(err, db) {
+                
+              if (err) throw err;
+                
+              db.collection("users").findOne({twitterid: (req.body.twitterid)}, function(err, result) {
+                  
+                if (err) throw err;
+                db.close();
+
+                var twitterClient = new Twitter({
+
+              consumer_key:'mwuqq8HHKzDdim86v4tx2DRmI',
+              consumer_secret:'pqt6mmV33wkgDN7R4ktoJ8eki7aPiGMLyoStT26V5PDjUi7Dvt',
+              access_token_key: result.token,
+              access_token_secret: result.tokenSecret
+
+            });
+
+              twitterClient.post('statuses/update', {status: (cc)}, function(error, tweet, response) {
+                  if (!error) {
+
+                      req.flash('success_msg', 'Your tweet has been sent!');
+                      res.redirect('/'); 
+
+                  }
+
+                  else{
+
+                        req.flash('fail_msg', 'Something went wrong');
+                        res.redirect('/');
+                  }
+
+              });
+            });
 
 
 
+        });
+
+
+    }
 
 
     });
@@ -152,54 +190,6 @@ var req = https.request (request_params, response_handler);
 req.end ();
 
 
-
-console.log(language)
-
-
-
-
-
-/*
-mongo.connect(url, function(err, db) {
-  if (err) throw err;
-  db.collection("users").findOne({twitterid: (req.body.twitterid)}, function(err, result) {
-    if (err) throw err;
-
-    console.log(result);
-
-    db.close();
-
-      var twitterClient = new Twitter({
-
-
-  consumer_key:'mwuqq8HHKzDdim86v4tx2DRmI',
-  consumer_secret:'pqt6mmV33wkgDN7R4ktoJ8eki7aPiGMLyoStT26V5PDjUi7Dvt',
-  access_token_key: result.token,
-  access_token_secret: result.tokenSecret
-
-});
-
-  twitterClient.post('statuses/update', {status: (req.body.tweetText)}, function(error, tweet, response) {
-  if (!error) {
-    console.log('Tweet = ' + (tweet));
-      req.flash('success_msg', 'Du tweetade!');
-
-        res.redirect('/');
-  }
-
-    else{
-
-        req.flash('fail_msg', 'Något gick fel');
-        res.redirect('/');
-    }
-
-  });
-});
-
-
-
-});
-*/
 
 
 });
