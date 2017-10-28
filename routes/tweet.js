@@ -161,14 +161,14 @@ let response_handler = function (response) {
                   if (!error) {
 
                       console.log('Tweet sent!')
-                      res.redirect('/'); 
+                      res.render('index', {tweet_msg: 'Tweet sent!'}); 
 
                   }
 
                   else{
 
                         console.log('Tweet NOT sent!')
-                        res.redirect('/');
+                        res.render('tweet', {cc, tweetError_msg: 'Something went wrong!'});
                   }
 
               });
