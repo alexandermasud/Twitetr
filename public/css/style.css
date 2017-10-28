@@ -1,3 +1,14 @@
+#grad {
+
+    height: 1000px;
+    background: red; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#1fc68f, #7428cb); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#1fc68f, #7428cb); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#1fc68f, #7428cb); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#1fc68f, #7428cb); /* Standard syntax */
+
+}
+
 .twitter-btn{
 
     background-color: #1da1f2;
@@ -30,13 +41,9 @@ a.twitter-btn:hover{
     color:white;
 }
 
-.background{
-
-    background-color: #3eb991;
-}
 
 .h1index{
-    margin-top: 20px;
+    margin-top: 30px;
     color:white;
     font-size: 105px;
 }
@@ -55,6 +62,7 @@ a.twitter-btn:hover{
 .h3index{
 
     margin-top:100px;
+    margin-bottom: 50px;
     color:white;
     font-size: 25px;
 
@@ -68,39 +76,45 @@ a.twitter-btn:hover{
 }
 
 
-#grad {
+#tweetText{
 
-    height: 950px;
-    background: red; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(#1fc68f, #7428cb); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(#1fc68f, #7428cb); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(#1fc68f, #7428cb); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(#1fc68f, #7428cb); /* Standard syntax */
+    margin-top: 20px;
 
 }
 
-.componentlogos{
 
-    margin-top: 60px;
-    margin-bottom: 60px;
+
+.form-rounded {
+border-radius: 2rem;
 }
 
-.indexdownarrow{
+textarea {
+    resize: none;
+}
 
-     color:white;
+
+/* Drodown menyn med språk */
+
+#sel1{
+    min-height: 40px;
+}
+
+
+.alerts {
+  position: absolute;
+  top: 55px;
+  right: 0px;
+  left: 0px;
 
 }
 
-a.indexdownarrow:hover{
 
-     color:white;
+.carousel-indicators .active{
 
-}
-.pushfooter{
-
-    margin-bottom: 320px;
+    background-color: black;
 }
 
+<<<<<<< HEAD
 footer{
     margin-top: 500px;
   right: 0;
@@ -110,40 +124,65 @@ footer{
   background-color: #62c6a5;
   color: white;
   text-align: center;
+=======
+.carousel-indicators li{
+
+    background-color: grey;
+
+>>>>>>> Alex
 }
 
-footer p{
-    display: inline;
-    margin-left: 10px;
-    margin-right: 10px;
+.carousel-custom {
+
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-top: 375px;
+    height: 450px;
+    background-color: #ffffff;
 }
 
-#fakulteten, #malmo{
-    margin-left: 2px;
+.carousel-arrows-color {
+    color: black;
+
 }
 
-#tweetText{
+.carousel-1-pic {
+    margin-top: 100px;
+    width: 280px;
+}
+.carousel-1-node {
+    margin-top: 60px;
+    width: 280px;
+}
+
+.carousel-2-bing {
+
+    margin-top: 100px;
+    width: 300px;
+
+}
+
+.carousel-2-twitter {
+
+    margin-top: 60px;
+    width: 200px;
+
+}
+
+.h2-carousel {
+
     margin-top: 20px;
 }
 
-#h3_special{
-    text-align: center;
-    margin: auto;
-    width: 50%;
-    padding-bottom: 5%;
-    padding-top: 2%;
-}
+#chars{
+  color: white;
+  margin-right: 5px;
 
-.textarea {
-  width: 300px;
-  height: 150px;
 }
+#newid{
+  color: white;
 
-.carousel-control.left, .carousel-control.right{ 
-    background: none !important;
-    filter: progid:none !important;>
-}
-
+<<<<<<< HEAD
 .carousel-content {
     display: block;
 }
@@ -151,3 +190,6 @@ footer p{
 #myCarousel{
     margin-top: 300px;
 }
+=======
+}
+>>>>>>> Alex

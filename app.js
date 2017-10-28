@@ -5,7 +5,6 @@ var exphbs = require('express-handlebars');
 var flash = require('connect-flash');
 var session = require('express-session');
 var passport = require('passport');
-var methodOverride = require('method-override');
 var Twitter = require('twitter');
 var request = require('request');
 

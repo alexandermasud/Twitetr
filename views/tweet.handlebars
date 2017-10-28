@@ -1,9 +1,57 @@
 <div class="container">
+
 <div class="row"><h1 class="h1index">@{{user.twitterhandle}}</h1></div>
-<div class="row"><h3 class="h3index">Skriv ett tweet så fixar vi rättstavningen</h3></div>
+<div class="row"><h3 class="h3index">Write a tweet, we'll do the spelling</h3></div>
 
 <form method="post" action="/tweet">
 <input type="text" name="twitterid" value="{{user.twitterid}}" readonly hidden>
+
+<div class="row">
+    <div>
+     <label><h5 style="color:white;">Language:</h5></label>
+      <select class="form-control" name="language" id="sel1">
+              <option value="sv">Swedish</option>
+              <option value="ar">Arabic</option>
+              <option value="zh-CN">Chinese (China)</option>
+              <option value="zh-HK">Chinese (Hong Kong SAR)</option>
+              <option value="zh-TW">Chinese (Taiwan)</option>
+              <option value="da">Danish</option>
+              <option value="n1-BE">Dutch (Belgium)</option>
+              <option value="n1-NL">Dutch (Netherlands)</option>
+              <option value="en-AU">English (Australia)</option>
+              <option value="en-CA">English (Canada)</option>
+              <option value="en-IN">English (India)</option>
+              <option value="en-ID">English (Indonesia)</option>
+              <option value="en-MY">English (Malaysia)</option>
+              <option value="en-NZ">English (new Zealand)</option>
+              <option value="en-PH">English (Philippines)</option>
+              <option value="en-ZA">English (South Africa)</option>
+              <option value="en-GB">English (UK)</option>
+              <option value="en-US">English (USA)</option>
+              <option value="fi">Finnish</option>
+              <option value="fr-BE">French (Belgium)</option>
+              <option value="fr-CA">French (Canada)</option>
+              <option value="fr-FR">French (France)</option>
+              <option value="fr-CH">French (Switzerland)</option>
+              <option value="de-AT">German (Austria)</option>
+              <option value="de-DE">German (Germany)</option>
+              <option value="de-CH">German (Switzerland)</option>
+              <option value="it">Italian</option>
+              <option value="ja">Japanese</option>
+              <option value="ko">Korean</option>
+              <option value="no">Norwegian</option>
+              <option value="pl">Polish</option>
+              <option value="pt-BR">Portuguese (Brazil)</option>
+              <option value="pt-PT">Portuguese (Portugal)</option>
+              <option value="ru">Russian</option>
+              <option value="es-AR">Spanish (Argentina)</option>
+              <option value="es-MX">Spanish (Mexico)</option>
+              <option value="es-ES">Spanish (Spain)</option>
+              <option value="es-US">Spanish (USA)</option>
+              <option value="tr">Turkish</option>
+      </select>
+    </div>
+</div>
 
  <div class="row">
 
@@ -11,7 +59,8 @@
   <div class="col-lg-4"></div>
      <div class="col-lg-4">
       <div class="form-group-lg">
-        <textarea class="form-control-lg" rows="5" id="tweetText" name="tweetText"></textarea>
+        <textarea id="textarea" class="form-control-lg form-rounded" rows="6" id="tweetText" name="tweetText" cols="40" maxlength="140" required>{{cc}}</textarea>
+
       </div>
   </div>
 
@@ -21,44 +70,23 @@
   </div>
 
     <div class="row">
-       <div class="col-lg-4"></div>
+      
 
+           <div class="col-lg-4"></div>
             <div class="col-lg-4">
-          <div class="col-lg-4">
-          <button type="submit" class="btn btn-outline-secondary twitter-btncolor btn-block"> Tweeta! </button>
-         </div>
+          <button type="submit" class="btn btn-outline-secondary twitter-btncolor btn-block" style="width: 150px;"> Tweet! </button>
+        
        </div>
 
-       <div class="col-lg-4"></div>
-  </div>
+       <div class="col-lg-1"></div>
+       <p id="newid">(</p><span id="chars">0</span><p id="newid"> / 140)</p>
+    
+      </div>
 </form>
 
-<div class="pushfooter"> </div>
+
+
+
 
 
 </div>
-
-<script>
-
-  function go() {
-      var c1 = document.getElementById('tweetText').value;
-      var y = c1;
-      var arr = y.split(/\s+/);
-      console.log(arr)
-      xhr.open('GET', "http://api.libris.kb.se/bibspell/spell?query={"+arr+"}&key=84DA2F0C4816075538ECED72534B17F4", true);
-      xhr.send(null);
-      var xhr = new XMLHttpRequest();
-      xhr.onreadystatechange = function() {
-          if (xhr.readyState == XMLHttpRequest.DONE) {
-              var y = xhr.responseXML;
-              console.log(y)
-              var getSuggestions = y.querySelectorAll('term[changed="true"]');
-              document.write("<h2> Förslag på korrekta ord: </h2>")
-              for (var i = 0; i < getSuggestions.length; i++){
-                document.write("<p>" + getSuggestions[i].childNodes[0].nodeValue + "<p>")
-    }
-  }
-}
-}
-
-</script>
