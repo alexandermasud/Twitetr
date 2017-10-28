@@ -1,32 +1,32 @@
 {
-  "name": "webbtjanster",
-  "version": "1.0.0",
+  "name": "Twitetr",
+  "version": "2.0.0",
   "description": "Webbtjänster",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ViktorOlsson/Webbtj-nster.git"
+    "url": "git+https://github.com/alexandermasud/Twitetr.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Alexander Masud",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ViktorOlsson/Webbtj-nster/issues"
+    "url": "https://github.com/alexandermasud/Twitetr/issues"
   },
-  "homepage": "https://github.com/ViktorOlsson/Webbtj-nster#readme",
+  "homepage": "https://github.com/alexandermasud/Twitetr#readme",
   "dependencies": {
-    "body-parser": "^1.18.2",
-    "connect-flash": "^0.1.1",
-    "express": "^4.16.2",
-    "express-handlebars": "^3.0.0",
-    "express-session": "^1.15.6",
-    "mongodb": "^2.2.33",
-    "mongoose": "^4.12.1",
-    "passport": "^0.4.0",
-    "passport-twitter": "^1.0.4",
-    "request": "^2.83.0",
-    "twitter": "^1.7.1"
+    "body-parser": "1.18.2",
+    "connect-flash": "0.1.1",
+    "express": "4.16.2",
+    "express-handlebars": "3.0.0",
+    "express-session": "1.15.6",
+    "mongodb": "2.2.33",
+    "mongoose": "4.12.1",
+    "passport": "0.4.0",
+    "passport-twitter": "1.0.4",
+    "request": "2.83.0",
+    "twitter": "1.7.1"
   }
 }
