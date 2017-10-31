@@ -34,7 +34,7 @@ router.post('/tweet',  function(req, res) {
     var tweetText = (req.body.tweetText)
 
     var language = (req.body.language)
-    
+
     var twitterid = (req.body.twitterid)
 
      // v7 b6c71184b289418d9f6dcbdb5dff3fde
@@ -47,7 +47,7 @@ let host = 'api.cognitive.microsoft.com';
 let path = '/bing/v7.0/spellcheck/';
 
 /* NOTE: Replace this example key with a valid subscription key (see the Prequisites section above). Also note v5 and v7 require separate subscription keys. */
-let key = 'b6c71184b289418d9f6dcbdb5dff3fde';
+let key = '130ad325b266483dad03060010081e28';
 
 // These values are used for optional headers (see below).
 // let CLIENT_ID = "<Client ID from Previous Response Goes Here>";
@@ -131,20 +131,20 @@ let response_handler = function (response) {
 
         var ccCount = cc.length;
         console.log(ccCount);
-        
+
         if (ccCount > 141){
           var checkTweet = "No more than 140 characters are allowed";
           res.render('tweet',{cc, tweetError_msg: checkTweet});
         }
-        
+
         else{
- 
+
             mongo.connect(url, function(err, db) {
-                
+
               if (err) throw err;
-                
+
               db.collection("users").findOne({twitterid: twitterid}, function(err, result) {
-                  
+
                 if (err) throw err;
                 db.close();
 
@@ -161,7 +161,7 @@ let response_handler = function (response) {
                   if (!error) {
 
                       console.log('Tweet sent!')
-                      res.render('index', {tweet_msg: 'Tweet sent!'}); 
+                      res.render('index', {tweet_msg: 'Tweet sent!'});
 
                   }
 
