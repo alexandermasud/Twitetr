@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var bodyParser = require('body-parser');
-
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
 var db = mongoose.connection;
@@ -10,7 +9,7 @@ var url = 'mongodb://admin:admin@ds119395.mlab.com:19395/webbtjanser';
 
 var Twitter = require('twitter');
 
-
+//Checks if the user is loggedin, so the user cant file path travel 
 function isLoggedIn(req, res, next) {
 
     if (req.isAuthenticated())
@@ -20,7 +19,7 @@ function isLoggedIn(req, res, next) {
 
 
 
-
+//Routing to the tweet where the user can write their tweets and spell-check will be available
 router.get('/tweet',isLoggedIn, function(req, res) {
 
     res.render('tweet');
@@ -28,7 +27,7 @@ router.get('/tweet',isLoggedIn, function(req, res) {
 });
 
 
-
+//Sending the tweet via POST, after the user has submitted their tweet
 router.post('/tweet',  function(req, res) {
 
     var tweetText = (req.body.tweetText)
@@ -92,7 +91,7 @@ let response_handler = function (response) {
 
 
 
-        var newWord = []
+        var newWord = [] 
         var oldWord = []
         var newTweet = []
         var oldestTweet = []
@@ -102,7 +101,7 @@ let response_handler = function (response) {
         var oldTweet = tweetText;
 
 
-
+		//Checking for the suggested words that BING provides
         for (var i = 0; i < x.flaggedTokens.length; i++) {
 
              oldWord.push(x.flaggedTokens[i].token)
@@ -113,7 +112,7 @@ let response_handler = function (response) {
 
 
         }
-
+		//Checking for matching words and removing old ones
         var baratest = []
         var c = 0;
         for (var j = 0; j < makingArray.length; j++){
@@ -131,7 +130,8 @@ let response_handler = function (response) {
 
         var ccCount = cc.length;
         console.log(ccCount);
-
+		
+		//A counter that sees if the user has provided more than 140 words.
         if (ccCount > 141){
           var checkTweet = "No more than 140 characters are allowed";
           res.render('tweet',{cc, tweetError_msg: checkTweet});
