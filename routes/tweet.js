@@ -9,7 +9,7 @@ var url = 'mongodb://admin:admin@ds119395.mlab.com:19395/webbtjanser';
 
 var Twitter = require('twitter');
 
-//Checks if the user is loggedin, so the user cant file path travel 
+//Checks if the user is loggedin, so the user cant file path travel
 function isLoggedIn(req, res, next) {
 
     if (req.isAuthenticated())
@@ -36,7 +36,7 @@ router.post('/tweet',  function(req, res) {
 
     var twitterid = (req.body.twitterid)
 
-     // v7 b6c71184b289418d9f6dcbdb5dff3fde
+
 
     'use strict';
 
@@ -45,8 +45,11 @@ let https = require ('https');
 let host = 'api.cognitive.microsoft.com';
 let path = '/bing/v7.0/spellcheck/';
 
+// Ny nyckel skapad 17 December 2017 är giltig till mitten av Januari
+//Key V7: 21107be16d194c9a8daa4073e17fd99c
+
 /* NOTE: Replace this example key with a valid subscription key (see the Prequisites section above). Also note v5 and v7 require separate subscription keys. */
-let key = '130ad325b266483dad03060010081e28';
+let key = '21107be16d194c9a8daa4073e17fd99c';
 
 // These values are used for optional headers (see below).
 // let CLIENT_ID = "<Client ID from Previous Response Goes Here>";
@@ -91,7 +94,7 @@ let response_handler = function (response) {
 
 
 
-        var newWord = [] 
+        var newWord = []
         var oldWord = []
         var newTweet = []
         var oldestTweet = []
@@ -130,7 +133,7 @@ let response_handler = function (response) {
 
         var ccCount = cc.length;
         console.log(ccCount);
-		
+
 		//A counter that sees if the user has provided more than 140 words.
         if (ccCount > 141){
           var checkTweet = "No more than 140 characters are allowed";
